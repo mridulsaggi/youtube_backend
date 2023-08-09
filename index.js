@@ -10,12 +10,18 @@ import { names } from "./names.js";
 import { logout } from "./logout.js";
 import { login } from "./login.js";
 import { getnames } from "./getnames.js";
+import cors from "cors"
 const app=express();
 app.use(cp());
 config({path:"./config.env"})
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 connection();
+app.use(cors({
+    origin:process.env.frontendurl,
+    methods:["GET","PUT","POST","DELETE"],
+    credentials:true
+}))
 app.get("/login",login)
 app.post("/register",register)
 // app.get("/",(req,res)=>{
