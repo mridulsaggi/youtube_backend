@@ -11,7 +11,7 @@ export const register = async (req, res) => {
             message:"email already registered"
         })
     }
-    const hashedpassword = await bcrypt.hash(password, process.env.salt);
+    const hashedpassword = await bcrypt.hash(password,12);
     const user = await utubeuser.create({ name, email, password: hashedpassword })
     // const id=user._id;
     const id= jwt.sign({_id:user._id},process.env.secretkey);
