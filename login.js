@@ -20,7 +20,7 @@ export const login = async (req, res) => {
             })
             res.json({
                 success: true,
-                message: "user logged in successfully "
+                message: `welcome back ${a.name}`
             })
         }
         else {

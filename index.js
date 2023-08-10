@@ -22,7 +22,7 @@ app.use(cors({
     methods:["GET","PUT","POST","DELETE"],
     credentials:true
 }))
-app.get("/login",login)
+app.post("/login",login)
 app.post("/register",register)
 // app.get("/",(req,res)=>{
 //     res.send("haa nji")
