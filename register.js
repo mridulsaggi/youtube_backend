@@ -18,7 +18,7 @@ export const register = async (req, res) => {
     console.log("record added");
     res.cookie("token",id,{
         httpOnly:true,
-        samesite:"none",
+        sameSite:"none",
         secure:true,
         expires:new Date(Date.now()+30*60*1000),
     })

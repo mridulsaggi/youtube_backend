@@ -14,7 +14,7 @@ export const login = async (req, res) => {
             const id = jwt.sign({ _id: a._id }, process.env.secretkey)
             res.cookie("token", id, {
                 httpOnly: true,
-                samesite: "none",
+                sameSite: "none",
                 secure: true,
                 expires: new Date(Date.now() + 30 * 1000 * 60)
             })
